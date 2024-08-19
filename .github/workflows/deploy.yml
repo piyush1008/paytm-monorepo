@@ -39,4 +39,4 @@ jobs:
           sudo docker pull piyush1008/paytm-monorepo:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -e NEXTAUTH_URL={{secrets.NEXTAUTH_URL}} -e DATABASE_URL=${{ secrets.DB_URL }} -e DB_USERNAME=${{ secrets.DB_USERNAME }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} -d --name web-app -p 3005:3000 piyush1008/paytm-monorepo:latest
+          sudo docker run -e NEXTAUTH_URL=${{secrets.NEXTAUTH_URL}} -e DATABASE_URL=${{ secrets.DB_URL }} -e DB_USERNAME=${{ secrets.DB_USERNAME }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} -d --name web-app -p 3005:3000 piyush1008/paytm-monorepo:latest
